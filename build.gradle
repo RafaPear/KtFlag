@@ -133,11 +133,3 @@ tasks.register("runExample", JavaExec) {
 tasks.withType(DokkaTask).configureEach {
     outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
 }
-
-// Publicação automática no Maven Local (condicional)
-tasks.named("build") {
-    def publishTask = tasks.named("publishToMavenLocal")
-    if (publishTask != null) {
-        finalizedBy(publishTask)
-    }
-}
