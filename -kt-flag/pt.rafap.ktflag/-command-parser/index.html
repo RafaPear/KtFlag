@@ -108,24 +108,24 @@
   <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag</a><span class="delimiter">/</span><span class="current">CommandParser</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Command</span><wbr></wbr><span><span>Parser</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CommandParser</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>prompt<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>colorText(&quot;&gt; &quot;, Colors.PURPLE)<span class="token punctuation">, </span></span><span class="parameter ">helpCmd<span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">A simple command line parser that reads user input, parses it into commands and arguments, and executes the corresponding registered command.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of the context object passed to command executions.</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CommandParser</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cmd<span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>config<span class="token operator">: </span><a href="../-parser-config/index.html">ParserConfig</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator"> = </span>ParserConfig()</span></span><span class="token punctuation">)</span></div><p class="paragraph">A simple command line parser that reads user input, parses it into commands and arguments, and executes the corresponding registered command.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of the context object passed to command executions.</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="-1009964276%2FConstructors%2F-251573632" anchor-label="CommandParser" id="-1009964276%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+        <div class="table"><a data-name="-1435276339%2FConstructors%2F-251573632" anchor-label="CommandParser" id="-1435276339%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-command-parser.html"><span>Command</span><wbr></wbr><span><span>Parser</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1009964276%2FConstructors%2F-251573632"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1435276339%2FConstructors%2F-251573632"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">prompt<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span>colorText(&quot;&gt; &quot;, Colors.PURPLE)<span class="token punctuation">, </span></span><span class="parameter ">helpCmd<span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>cmd<span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">config<span class="token operator">: </span><a href="../-parser-config/index.html">ParserConfig</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator"> = </span>ParserConfig()</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -134,17 +134,17 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="2043357260%2FProperties%2F-251573632" anchor-label="prompt" id="2043357260%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+        <div class="table"><a data-name="-5557202%2FProperties%2F-251573632" anchor-label="config" id="-5557202%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
           <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="prompt.html"><span><span>prompt</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2043357260%2FProperties%2F-251573632"></span>
+                  <div><a href="config.html"><span><span>config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-5557202%2FProperties%2F-251573632"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="prompt.html">prompt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The prompt string displayed to the user.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="config.html">config</a><span class="token operator">: </span><a href="../-parser-config/index.html">ParserConfig</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">The parser config.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -194,21 +194,6 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="read-input-and-get-result.html"><span class="token function">readInputAndGetResult</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="index.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-result/index.html">CommandResult</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Reads a line of input from the user, parses it into a command and arguments, and executes the corresponding registered command with the provided context.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-69755621%2FFunctions%2F-251573632" anchor-label="registerCommands" id="-69755621%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="register-commands.html"><span>register</span><wbr></wbr><span><span>Commands</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-69755621%2FFunctions%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="register-commands.html"><span class="token function">registerCommands</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>commands<span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Registers one or more commands with the parser.</p></div></div></div>
                 </div>
               </div>
             </div>

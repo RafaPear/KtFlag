@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>CommandUtils</title>
+    <title>verifyArgsCount</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
@@ -104,51 +104,12 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageIds="KtFlag::pt.rafap.ktflag.cmd/CommandUtils///PointingToDeclaration//-251573632">
-  <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag.cmd</a><span class="delimiter">/</span><span class="current">CommandUtils</span></div>
+<div class="main-content" data-page-type="member" id="content" pageIds="KtFlag::pt.rafap.ktflag.cmd/CommandImpl/verifyArgsCount/pt.rafap.ktflag.cmd.CommandImpl[*]#kotlin.Int/PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag.cmd</a><span class="delimiter">/</span><a href="index.html">CommandImpl</a><span class="delimiter">/</span><span class="current">verifyArgsCount</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Command</span><wbr></wbr><span><span>Utils</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">CommandUtils</a></div><p class="paragraph">Utility helpers for command implementations.</p></div></div>
+    <h1 class="cover"><span>verify</span><wbr></wbr><span>Args</span><wbr></wbr><span><span>Count</span></span></h1>
   </div>
-  <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
-    <div class="tabs-section-body">
-      <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-1051691655%2FFunctions%2F-251573632" anchor-label="printUnknownCommand" id="-1051691655%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="print-unknown-command.html"><span>print</span><wbr></wbr><span>Unknown</span><wbr></wbr><span><span>Command</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1051691655%2FFunctions%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="print-unknown-command.html"><span class="token function">printUnknownCommand</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">cmdHelp<span class="token operator">: </span><a href="../-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Prints a standardized message for an unknown command <a href="print-unknown-command.html">name</a>, hinting the user to consult the provided help command <a href="print-unknown-command.html">cmdHelp</a>.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1169151635%2FFunctions%2F-251573632" anchor-label="verifyArgsCount" id="-1169151635%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="verify-args-count.html"><span>verify</span><wbr></wbr><span>Args</span><wbr></wbr><span><span>Count</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1169151635%2FFunctions%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="verify-args-count.html"><span class="token function">verifyArgsCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">got<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Checks whether the provided argument count <a href="verify-args-count.html">got</a> is within the inclusive range defined by this command's <a href="../-command-info/min-args.html">CommandInfo.minArgs</a> and <a href="../-command-info/max-args.html">CommandInfo.maxArgs</a>.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="index.html">CommandImpl</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="verify-args-count.html"><span class="token function">verifyArgsCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">got<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><p class="paragraph">Checks whether the provided argument count <a href="verify-args-count.html">got</a> is within the inclusive range defined by this command's <a href="../-command-info/min-args.html">CommandInfo.minArgs</a> and <a href="../-command-info/max-args.html">CommandInfo.maxArgs</a>.</p></div></div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>

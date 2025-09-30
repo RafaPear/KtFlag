@@ -4,6 +4,8 @@ $dokka.location:pt.rafap.ktflag.cmd////PointingToDeclaration/-kt-flag/pt.rafap.
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/execute/#kotlin.Array[kotlin.String]#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/execute.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/info/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/info.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandImpl/joinToString/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/join-to-string.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandImpl/verifyArgsCount/pt.rafap.ktflag.cmd.CommandImpl[*]#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/verify-args-count.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/CommandInfo/#kotlin.String#kotlin.String#kotlin.String#kotlin.collections.List[kotlin.String]#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/-command-info.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/aliases/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/aliases.html
@@ -15,15 +17,16 @@ $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/title/#/PointingToDeclaration/-
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/toString/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/to-string.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/usage/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/usage.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandRegister///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/index.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandRegister/CommandRegister/#pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/-command-register.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandRegister/CommandRegister/#kotlin.Array[pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]]#pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/-command-register.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandRegister/commands/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/commands.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandRegister/get/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/get.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandRegister/getAllCommands/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/get-all-commands.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandRegister/registerCommands/#kotlin.Array[pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-register/register-commands.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.ERROR///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-e-r-r-o-r/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.ERROR/ERROR/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-e-r-r-o-r/-e-r-r-o-r.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.INVALID_ARGS///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-i-n-v-a-l-i-d_-a-r-g-s/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.INVALID_ARGS/INVALID_ARGS/#pt.rafap.ktflag.cmd.CommandInfo#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-i-n-v-a-l-i-d_-a-r-g-s/-i-n-v-a-l-i-d_-a-r-g-s.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandResult.INVALID_INPUT///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-i-n-v-a-l-i-d_-i-n-p-u-t/index.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandResult.INVALID_INPUT/INVALID_INPUT/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-i-n-v-a-l-i-d_-i-n-p-u-t/-i-n-v-a-l-i-d_-i-n-p-u-t.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.NOT_IMPLEMENTED///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-n-o-t_-i-m-p-l-e-m-e-n-t-e-d/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult.NOT_IMPLEMENTED/NOT_IMPLEMENTED/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/-n-o-t_-i-m-p-l-e-m-e-n-t-e-d/-n-o-t_-i-m-p-l-e-m-e-n-t-e-d.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/index.html
@@ -33,10 +36,8 @@ $dokka.location:pt.rafap.ktflag.cmd/CommandResult/cause/#/PointingToDeclaration/
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult/isError/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/is-error.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult/message/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/message.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult/printError/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/print-error.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandResult/printUnknownCommand/#kotlin.String#pt.rafap.ktflag.cmd.CommandImpl[*]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/print-unknown-command.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResult/result/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result/result.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandUtils///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-utils/index.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandUtils/printUnknownCommand/#kotlin.String#pt.rafap.ktflag.cmd.CommandImpl[*]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-utils/print-unknown-command.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandUtils/verifyArgsCount/pt.rafap.ktflag.cmd.CommandImpl[*]#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-utils/verify-args-count.html
 $dokka.location:pt.rafap.ktflag.style////PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/index.html
 $dokka.location:pt.rafap.ktflag.style/Colors///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/index.html
 $dokka.location:pt.rafap.ktflag.style/Colors/BLUE/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/-b-l-u-e.html
@@ -59,12 +60,15 @@ $dokka.location:pt.rafap.ktflag.style/Colors/YELLOW/#/PointingToDeclaration/-kt
 $dokka.location:pt.rafap.ktflag.style/Colors/colorText/#kotlin.String#kotlin.Array[kotlin.String]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/color-text.html
 $dokka.location:pt.rafap.ktflag////PointingToDeclaration/-kt-flag/pt.rafap.ktflag/index.html
 $dokka.location:pt.rafap.ktflag/CommandParser///PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/index.html
-$dokka.location:pt.rafap.ktflag/CommandParser/CommandParser/#kotlin.String#pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/-command-parser.html
+$dokka.location:pt.rafap.ktflag/CommandParser/CommandParser/#kotlin.Array[pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]]#pt.rafap.ktflag.ParserConfig[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/-command-parser.html
+$dokka.location:pt.rafap.ktflag/CommandParser/config/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/config.html
 $dokka.location:pt.rafap.ktflag/CommandParser/getAllCommands/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-all-commands.html
 $dokka.location:pt.rafap.ktflag/CommandParser/getCommand/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-command.html
-$dokka.location:pt.rafap.ktflag/CommandParser/prompt/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/prompt.html
 $dokka.location:pt.rafap.ktflag/CommandParser/readInputAndGetResult/#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/read-input-and-get-result.html
-$dokka.location:pt.rafap.ktflag/CommandParser/registerCommands/#kotlin.Array[pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/register-commands.html
+$dokka.location:pt.rafap.ktflag/ParserConfig///PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-parser-config/index.html
+$dokka.location:pt.rafap.ktflag/ParserConfig/ParserConfig/#kotlin.String#pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-parser-config/-parser-config.html
+$dokka.location:pt.rafap.ktflag/ParserConfig/helpCmd/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-parser-config/help-cmd.html
+$dokka.location:pt.rafap.ktflag/ParserConfig/prompt/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-parser-config/prompt.html
 pt.rafap.ktflag
 pt.rafap.ktflag.cmd
 pt.rafap.ktflag.style
