@@ -73,11 +73,11 @@ tasks.withType(DokkaTask.class).configureEach {
 
 // adiciona javadoc gerado pela Dokka ao artefacto javadocJar
 project.afterEvaluate {
-    def dokkaTaskCandidate = tasks.findByName('dokkaJavadoc')
-    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.findByName('dokkaGenerate')
+    def dokkaTaskCandidate = tasks.named('dokkaJavadoc')
+    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.named('dokkaGenerate')
     if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.find { it.name?.startsWith('dokka') }
 
-    def dokkaGenerateTask = tasks.findByName('dokkaGenerate')
+    def dokkaGenerateTask = tasks.named('dokkaGenerate')
     if (dokkaGenerateTask != null) {
         tasks.named('javadocJar') {
             dependsOn dokkaGenerateTask
@@ -136,7 +136,7 @@ tasks.withType(DokkaTask).configureEach {
 
 // Publicação automática no Maven Local (condicional)
 tasks.named("build") {
-    def publishTask = tasks.findByName("publishToMavenLocal")
+    def publishTask = tasks.named("publishToMavenLocal")
     if (publishTask != null) {
         finalizedBy(publishTask)
     }
