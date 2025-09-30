@@ -1,0 +1,65 @@
+package pt.rafap.ktflag.cmd
+
+import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
+import pt.isel.pt.rafap.ktflag.cmd.CommandRegister
+import pt.rafap.ktflag.cmd.support.DummyCommand
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
+import kotlin.test.assertSame
+
+class CommandRegisterTest {
+
+    @Test
+    fun autoRegistersHelpWithCommonAliases() {
+        val reg = CommandRegister<Unit>()
+        val help = reg["help"]
+        assertNotNull(help)
+        // Built-in help uses aliases h, help, ?
+        assertSame(help, reg["h"])
+        assertSame(help, reg["?"])
+    }
+
+    @Test
+    fun registerCommands_bindsAllAliasesAndDedupsInGetAllCommands() {
+        val reg = CommandRegister<Unit>()
+        val dummyInfo = CommandInfo(
+            title = "Dummy",
+            description = "desc",
+            aliases = listOf("a", "alpha"),
+            usage = "a [x]",
+            minArgs = 0,
+            maxArgs = 1
+        )
+        val dummy = DummyCommand<Unit>(dummyInfo)
+        reg.registerCommands(dummy)
+
+        assertSame(dummy, reg["a"])
+        assertSame(dummy, reg["alpha"])
+
+        val all = reg.getAllCommands()
+        // Expect exactly two distinct commands: built-in help + dummy
+        assertEquals(2, all.size)
+    }
+
+    @Test
+    fun customHelpInConstructor_replacesDefaultHelpOnlyForGivenAliases() {
+        val customHelpInfo = CommandInfo(
+            title = "XHelp",
+            description = "custom",
+            aliases = listOf("help"),
+            usage = "help",
+            minArgs = 0,
+            maxArgs = 1
+        )
+        val customHelp = DummyCommand<Unit>(customHelpInfo)
+        val reg = CommandRegister(customHelp)
+
+        assertSame(customHelp, reg["help"]) // provided alias present
+        // Default aliases like "h" or "?" are not automatically added for custom help
+        // so they should not resolve to the customHelp unless explicitly provided.
+        // They may be null depending on implementation choice.
+        assertEquals(null, reg["h"])
+        assertEquals(null, reg["?"])
+    }
+}

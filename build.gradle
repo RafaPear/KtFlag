@@ -1,0 +1,143 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.1.20'
+    id 'java-library'
+    id 'org.jetbrains.dokka' version '2.0.0'
+}
+
+group = 'pt.rafap.ktflag'
+version = '1.0-Release'
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'org.jetbrains.dokka'
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    // Ensure Kotlin test uses JUnit 5 platform
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+// directoria para guardar o ficheiro version.properties gerado
+def generatedVersionDir = layout.buildDirectory.dir('generated-version').get().asFile.path
+
+sourceSets {
+    main {
+        java.srcDirs += 'src/main/java'
+        output.dir(generatedVersionDir, builtBy: 'generateVersionProperties')
+    }
+    example {
+        kotlin.srcDir("src/example/kotlin")
+        resources.srcDir("src/example/resources")
+        compileClasspath += sourceSets.main.output + configurations.runtimeClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
+// gera ficheiro version.properties em tempo de build
+tasks.register('generateVersionProperties') {
+    doLast {
+        def propertiesFile = file("${generatedVersionDir}/version.properties")
+        propertiesFile.parentFile.mkdirs()
+        def properties = new Properties()
+        properties.setProperty('version', rootProject.version.toString())
+        propertiesFile.withWriter { properties.store(it, null) }
+    }
+}
+
+processResources.dependsOn tasks.named('generateVersionProperties')
+
+tasks.withType(DokkaTask.class).configureEach {
+    moduleName.set(project.name)
+    moduleVersion.set(project.version.toString())
+    failOnWarning.set(false)
+    suppressObviousFunctions.set(true)
+    suppressInheritedMembers.set(false)
+    offlineMode.set(false)
+}
+
+// adiciona javadoc gerado pela Dokka ao artefacto javadocJar
+project.afterEvaluate {
+    def dokkaTaskCandidate = tasks.findByName('dokkaJavadoc')
+    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.findByName('dokkaGenerate')
+    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.find { it.name?.startsWith('dokka') }
+
+    def dokkaGenerateTask = tasks.findByName('dokkaGenerate')
+    if (dokkaGenerateTask != null) {
+        tasks.named('javadocJar') {
+            dependsOn dokkaGenerateTask
+            from(layout.buildDirectory.dir('dokka/html'))
+        }
+        tasks.named('jar') {
+            dependsOn dokkaGenerateTask
+            from(layout.buildDirectory.dir('dokka/html')) {
+                into('docs')
+            }
+        }
+    }
+
+    if (dokkaTaskCandidate != null) {
+        tasks.named('javadocJar') {
+            dependsOn dokkaTaskCandidate
+            if (dokkaTaskCandidate.hasProperty('outputDirectory')) {
+                from(dokkaTaskCandidate.outputDirectory)
+            }
+        }
+
+        tasks.named('jar') {
+            dependsOn dokkaTaskCandidate
+            if (dokkaTaskCandidate.hasProperty('outputDirectory')) {
+                from(dokkaTaskCandidate.outputDirectory) {
+                    into('docs')
+                }
+            }
+        }
+    } else {
+        logger.warn('Nenhuma task Dokka encontrada; javadocJar/jar não irão incluir documentação Dokka.')
+    }
+}
+
+// evita falhas por ficheiros duplicados em todas as tasks do tipo Jar
+tasks.withType(Jar).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+kotlin {
+    jvmToolchain(21)
+}
+
+// task de exemplo para correr a CLI
+tasks.register("runExample", JavaExec) {
+    group = "application"
+    description = "Runs the CLI example"
+    classpath = sourceSets.example.runtimeClasspath
+    mainClass.set("MainKt")
+}
+
+// força saída de todas as DokkaTasks para build/dokka/html
+tasks.withType(DokkaTask).configureEach {
+    outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+}
+
+// Publicação automática no Maven Local (condicional)
+tasks.named("build") {
+    def publishTask = tasks.findByName("publishToMavenLocal")
+    if (publishTask != null) {
+        finalizedBy(publishTask)
+    }
+}
