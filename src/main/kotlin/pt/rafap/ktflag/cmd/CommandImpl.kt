@@ -1,4 +1,4 @@
-package pt.isel.pt.rafap.ktflag.cmd
+package pt.rafap.ktflag.cmd
 
 /**
  * Contract for a CLI command implementation.

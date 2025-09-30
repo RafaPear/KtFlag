@@ -1,6 +1,6 @@
-package pt.isel.pt.rafap.ktflag.cmd
+package pt.rafap.ktflag.cmd
 
-import pt.isel.pt.rafap.ktflag.style.Colors
+import pt.rafap.ktflag.style.Colors
 
 /**
  * Utility helpers for command implementations.

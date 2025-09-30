@@ -1,12 +1,12 @@
-package pt.isel.pt.rafap.ktflag
+package pt.rafap.ktflag
 
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult.Companion.INVALID_ARGS
-import pt.isel.pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
-import pt.isel.pt.rafap.ktflag.cmd.CommandImpl
-import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
-import pt.isel.pt.rafap.ktflag.cmd.CommandRegister
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult
-import pt.isel.pt.rafap.ktflag.style.Colors
+import pt.rafap.ktflag.cmd.CommandResult.Companion.INVALID_ARGS
+import pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
+import pt.rafap.ktflag.cmd.CommandImpl
+import pt.rafap.ktflag.cmd.CommandInfo
+import pt.rafap.ktflag.cmd.CommandRegister
+import pt.rafap.ktflag.cmd.CommandResult
+import pt.rafap.ktflag.style.Colors
 
 /**
  * Default implementation of a help command.

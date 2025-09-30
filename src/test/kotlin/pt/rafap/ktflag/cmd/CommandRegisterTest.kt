@@ -1,7 +1,7 @@
 package pt.rafap.ktflag.cmd
 
-import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
-import pt.isel.pt.rafap.ktflag.cmd.CommandRegister
+import pt.rafap.ktflag.cmd.CommandInfo
+import pt.rafap.ktflag.cmd.CommandRegister
 import pt.rafap.ktflag.cmd.support.DummyCommand
 import kotlin.test.Test
 import kotlin.test.assertEquals

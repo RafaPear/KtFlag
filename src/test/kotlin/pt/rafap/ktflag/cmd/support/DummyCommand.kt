@@ -1,8 +1,8 @@
 package pt.rafap.ktflag.cmd.support
 
-import pt.isel.pt.rafap.ktflag.cmd.CommandImpl
-import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult
+import pt.rafap.ktflag.cmd.CommandImpl
+import pt.rafap.ktflag.cmd.CommandInfo
+import pt.rafap.ktflag.cmd.CommandResult
 
 class DummyCommand<T>(
     override val info: CommandInfo,

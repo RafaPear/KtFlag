@@ -1,6 +1,6 @@
-package pt.isel.pt.rafap.ktflag.cmd
+package pt.rafap.ktflag.cmd
 
-import pt.isel.pt.rafap.ktflag.ImplHelp
+import pt.rafap.ktflag.ImplHelp
 
 /**
  * Registry that holds and resolves command implementations by alias.

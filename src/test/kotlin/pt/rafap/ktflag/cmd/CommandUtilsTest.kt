@@ -1,12 +1,12 @@
 package pt.rafap.ktflag.cmd
 
-import pt.isel.pt.rafap.ktflag.cmd.CommandImpl
-import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult
-import pt.isel.pt.rafap.ktflag.cmd.CommandUtils
+import pt.rafap.ktflag.cmd.CommandImpl
+import pt.rafap.ktflag.cmd.CommandInfo
+import pt.rafap.ktflag.cmd.CommandResult
+import pt.rafap.ktflag.cmd.CommandUtils
 import pt.rafap.ktflag.captureStdout
 import pt.rafap.ktflag.stripAnsi
-import pt.isel.pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
+import pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

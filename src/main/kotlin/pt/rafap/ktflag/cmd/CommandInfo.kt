@@ -1,4 +1,4 @@
-package pt.isel.pt.rafap.ktflag.cmd
+package pt.rafap.ktflag.cmd
 
 /**
  * Immutable metadata that describes a command.

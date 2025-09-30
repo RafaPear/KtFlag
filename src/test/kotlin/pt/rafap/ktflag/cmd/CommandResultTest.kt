@@ -1,10 +1,10 @@
 package pt.rafap.ktflag.cmd
 
-import pt.isel.pt.rafap.ktflag.cmd.CommandInfo
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult
+import pt.rafap.ktflag.cmd.CommandInfo
+import pt.rafap.ktflag.cmd.CommandResult
 import pt.rafap.ktflag.captureStdout
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult.Companion.ERROR
-import pt.isel.pt.rafap.ktflag.cmd.CommandResult.Companion.INVALID_ARGS
+import pt.rafap.ktflag.cmd.CommandResult.Companion.ERROR
+import pt.rafap.ktflag.cmd.CommandResult.Companion.INVALID_ARGS
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

@@ -1,4 +1,4 @@
-package pt.isel.pt.rafap.ktflag.style
+package pt.rafap.ktflag.style
 
 /**
  * Simple ANSI color and style utilities for console output.
