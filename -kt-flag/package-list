@@ -57,5 +57,14 @@ $dokka.location:pt.rafap.ktflag.style/Colors/WARNING_COLOR/#/PointingToDeclarati
 $dokka.location:pt.rafap.ktflag.style/Colors/WHITE/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/-w-h-i-t-e.html
 $dokka.location:pt.rafap.ktflag.style/Colors/YELLOW/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/-y-e-l-l-o-w.html
 $dokka.location:pt.rafap.ktflag.style/Colors/colorText/#kotlin.String#kotlin.Array[kotlin.String]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.style/-colors/color-text.html
+$dokka.location:pt.rafap.ktflag////PointingToDeclaration/-kt-flag/pt.rafap.ktflag/index.html
+$dokka.location:pt.rafap.ktflag/CommandParser///PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/index.html
+$dokka.location:pt.rafap.ktflag/CommandParser/CommandParser/#kotlin.String#pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/-command-parser.html
+$dokka.location:pt.rafap.ktflag/CommandParser/getAllCommands/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-all-commands.html
+$dokka.location:pt.rafap.ktflag/CommandParser/getCommand/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-command.html
+$dokka.location:pt.rafap.ktflag/CommandParser/prompt/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/prompt.html
+$dokka.location:pt.rafap.ktflag/CommandParser/readInputAndGetResult/#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/read-input-and-get-result.html
+$dokka.location:pt.rafap.ktflag/CommandParser/registerCommands/#kotlin.Array[pt.rafap.ktflag.cmd.CommandImpl[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/register-commands.html
+pt.rafap.ktflag
 pt.rafap.ktflag.cmd
 pt.rafap.ktflag.style
