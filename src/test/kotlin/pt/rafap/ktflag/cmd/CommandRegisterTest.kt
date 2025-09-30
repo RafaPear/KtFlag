@@ -20,7 +20,6 @@ class CommandRegisterTest {
 
     @Test
     fun registerCommands_bindsAllAliasesAndDedupsInGetAllCommands() {
-        val reg = CommandRegister<Unit>()
         val dummyInfo = CommandInfo(
             title = "Dummy",
             description = "desc",
@@ -30,13 +29,13 @@ class CommandRegisterTest {
             maxArgs = 1
         )
         val dummy = DummyCommand<Unit>(dummyInfo)
-        reg.registerCommands(dummy)
 
+        val reg = CommandRegister(dummy)
         assertSame(dummy, reg["a"])
         assertSame(dummy, reg["alpha"])
 
         val all = reg.getAllCommands()
-        // Expect exactly two distinct commands: built-in help + dummy
+        // Expect exactly 1 command: built-in help + dummy
         assertEquals(2, all.size)
     }
 
@@ -51,7 +50,7 @@ class CommandRegisterTest {
             maxArgs = 1
         )
         val customHelp = DummyCommand<Unit>(customHelpInfo)
-        val reg = CommandRegister(customHelp)
+        val reg = CommandRegister(helpCmd = customHelp)
 
         assertSame(customHelp, reg["help"]) // provided alias present
         // Default aliases like "h" or "?" are not automatically added for custom help

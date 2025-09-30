@@ -24,9 +24,7 @@ class ImplHelpTest {
 
     @Test
     fun help_withoutArgs_printsListingForAllCommands() {
-        val reg = CommandRegister<Unit>()
-        val d = dummy()
-        reg.registerCommands(d)
+        val reg = CommandRegister(dummy())
         val help = reg["help"]!!
 
         val out = captureStdout { help.execute(context = null) }
@@ -39,9 +37,7 @@ class ImplHelpTest {
 
     @Test
     fun help_withKnownCommand_printsDetailedHelp() {
-        val reg = CommandRegister<Unit>()
-        val d = dummy()
-        reg.registerCommands(d)
+        val reg = CommandRegister(dummy())
         val help = reg["help"]!!
 
         val out = captureStdout { help.execute("dummy", context = null) }
