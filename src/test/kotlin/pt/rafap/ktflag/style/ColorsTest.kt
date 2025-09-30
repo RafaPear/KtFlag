@@ -1,9 +1,8 @@
 package pt.rafap.ktflag.style
 
-import pt.rafap.ktflag.style.Colors
 import kotlin.test.Test
-import kotlin.test.assertTrue
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class ColorsTest {
     @Test

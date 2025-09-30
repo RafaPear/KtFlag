@@ -1,6 +1,5 @@
 package pt.rafap.ktflag.cmd
 
-import pt.rafap.ktflag.cmd.CommandInfo
 import kotlin.test.Test
 import kotlin.test.assertTrue
 

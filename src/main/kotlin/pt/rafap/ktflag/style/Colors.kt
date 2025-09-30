@@ -1,5 +1,9 @@
 package pt.rafap.ktflag.style
 
+import pt.rafap.ktflag.style.Colors.RESET
+import pt.rafap.ktflag.style.Colors.colorText
+
+
 /**
  * Simple ANSI color and style utilities for console output.
  *

@@ -1,13 +1,11 @@
 package pt.rafap.ktflag.cmd
 
-import pt.rafap.ktflag.cmd.CommandInfo
-import pt.rafap.ktflag.cmd.CommandRegister
 import pt.rafap.ktflag.captureStdout
-import pt.rafap.ktflag.stripAnsi
 import pt.rafap.ktflag.cmd.support.DummyCommand
+import pt.rafap.ktflag.stripAnsi
 import kotlin.test.Test
-import kotlin.test.assertTrue
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class ImplHelpTest {
 
