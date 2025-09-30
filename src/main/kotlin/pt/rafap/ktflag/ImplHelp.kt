@@ -1,11 +1,11 @@
 package pt.rafap.ktflag
 
-import pt.rafap.ktflag.cmd.CommandResult.Companion.INVALID_ARGS
-import pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
 import pt.rafap.ktflag.cmd.CommandImpl
 import pt.rafap.ktflag.cmd.CommandInfo
 import pt.rafap.ktflag.cmd.CommandRegister
 import pt.rafap.ktflag.cmd.CommandResult
+import pt.rafap.ktflag.cmd.CommandResult.INVALID_ARGS
+import pt.rafap.ktflag.cmd.CommandUtils.verifyArgsCount
 import pt.rafap.ktflag.style.Colors
 
 /**

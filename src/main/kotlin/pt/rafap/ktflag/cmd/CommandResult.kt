@@ -40,7 +40,7 @@ open class CommandResult<T>(
     }
 
     /** Common factory results and convenience wrappers. */
-    companion object {
+
         /** Generic error result with the provided [message]. */
         class ERROR<T>(message: String) :
             CommandResult<T>("An error occurred", message, true)
@@ -57,5 +57,5 @@ open class CommandResult<T>(
         /** Not implemented marker error with a human-friendly [message]. */
         class NOT_IMPLEMENTED<T>(message: String) :
             CommandResult<T>("Not implemented", message, true)
-    }
+
 }
