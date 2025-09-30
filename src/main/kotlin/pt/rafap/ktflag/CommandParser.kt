@@ -17,19 +17,10 @@ import kotlin.text.split
  * @property helpCmd An optional help command to be registered by default.
  */
 class CommandParser<T>(
-    val prompt: String = colorText("> ", Colors.PURPLE),
-    helpCmd: CommandImpl<T>? = null
+    vararg cmd: CommandImpl<T>,
+    val config: ParserConfig<T> = ParserConfig(),
 ) {
-    private val commandRegister: CommandRegister<T> = CommandRegister(helpCmd)
-
-    /**
-     * Registers one or more commands with the parser.
-     *
-     * @param commands Vararg list of commands to register.
-     */
-    fun registerCommands(vararg commands: CommandImpl<T>) {
-        commandRegister.registerCommands(*commands)
-    }
+    private val commandRegister: CommandRegister<T> = CommandRegister(*cmd, helpCmd = config.helpCmd)
 
     /**
      * Retrieves a registered command by its name or alias.
@@ -55,7 +46,7 @@ class CommandParser<T>(
      *         or the command is not found.
      */
     fun readInputAndGetResult(context: T?): CommandResult<T>? {
-        print(prompt)
+        print(config.prompt)
         val input = readln()
         if (input.isEmpty()) return null
 
@@ -63,6 +54,9 @@ class CommandParser<T>(
         val cmdName = parts[0]
         val args = parts.drop(1).toTypedArray()
 
-        return commandRegister[cmdName]?.execute(*args, context = context)
+        val cmd = commandRegister[cmdName] ?:
+        return CommandResult.INVALID_INPUT("Command '$cmdName' was not found")
+
+        return cmd.execute(*args, context = context)
     }
 }

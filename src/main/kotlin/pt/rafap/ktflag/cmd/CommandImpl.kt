@@ -16,6 +16,16 @@ interface CommandImpl<T> {
     val info: CommandInfo
 
     /**
+     * Checks whether the provided argument count [got] is within the inclusive
+     * range defined by this command's [CommandInfo.minArgs] and [CommandInfo.maxArgs].
+     */
+    fun CommandImpl<*>.verifyArgsCount(got: Int): Boolean {
+        val min = this.info.minArgs
+        val max = this.info.maxArgs
+        return got in min..max
+    }
+
+    /**
      * Executes the command with the provided arguments.
      *
      * @param arg Positional arguments supplied to the command.
@@ -23,4 +33,8 @@ interface CommandImpl<T> {
      * @return A [CommandResult] representing the outcome of the execution.
      */
     fun execute(vararg arg: String, context: T?): CommandResult<T>
+
+    fun joinToString(): String{
+        return this.info.toString()
+    }
 }

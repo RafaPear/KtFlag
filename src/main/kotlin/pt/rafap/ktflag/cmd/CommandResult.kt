@@ -39,23 +39,37 @@ open class CommandResult<T>(
         println(Colors.colorText("[ERROR] $cause: $message", Colors.ERROR_COLOR))
     }
 
-    /** Common factory results and convenience wrappers. */
+    /**
+     * Prints a standardized message for an unknown command [name], hinting the
+     * user to consult the provided help command [cmdHelp].
+     */
+    @Deprecated("This function requires a help cmd as an argument which implies some bad meeh logic")
+    fun printUnknownCommand(name: String, cmdHelp: CommandImpl<*>) {
+        println(Colors.colorText("Unknown command: $name", Colors.ERROR_COLOR))
+        print(Colors.colorText("Use", Colors.INFO_COLOR))
+        print(Colors.colorText(" ${cmdHelp.info.aliases} ", Colors.HELP_ALIAS_COLOR))
+        println(Colors.colorText("to see the list of available commands.", Colors.INFO_COLOR))
+    }
 
-        /** Generic error result with the provided [message]. */
-        class ERROR<T>(message: String) :
-            CommandResult<T>("An error occurred", message, true)
-        
-        /** Error for invalid argument count: expected [info.minArgs]..[info.maxArgs], got [got]. */
-        class INVALID_ARGS<T>(
-            info: CommandInfo,
-            got: Int
-        ) : CommandResult<T>(
-                "Invalid arguments",
-                "Argument count must be between ${info.minArgs} and ${info.maxArgs}, got $got",
-                true)
+    /** Generic error result with the provided [message]. */
+    class ERROR<T>(message: String) :
+        CommandResult<T>("An error occurred", message, true)
 
-        /** Not implemented marker error with a human-friendly [message]. */
-        class NOT_IMPLEMENTED<T>(message: String) :
-            CommandResult<T>("Not implemented", message, true)
+    /** Error for invalid argument count: expected [info.minArgs]..[info.maxArgs], got [got]. */
+    class INVALID_ARGS<T>(
+        info: CommandInfo,
+        got: Int
+    ) : CommandResult<T>(
+        "Invalid arguments",
+        "Argument count must be between ${info.minArgs} and ${info.maxArgs}, got $got",
+        true
+    )
 
+    /** Not implemented marker error with a human-friendly [message]. */
+    class NOT_IMPLEMENTED<T>(message: String) :
+        CommandResult<T>("Not implemented", message, true)
+
+    // Command does not exist
+    class INVALID_INPUT<T>(message: String) :
+        CommandResult<T>("Invalid input", message, true)
 }

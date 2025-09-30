@@ -31,6 +31,6 @@ data class CommandInfo(
      * Renders a compact human-readable representation of this command for listings.
      */
     override fun toString(): String {
-        return "$description\nAliases: ${aliases.joinToString(", ")}\nUsage: $usage"
+        return "$title\n$description\nAliases: ${aliases.joinToString(", ")}\nUsage: $usage"
     }
 }
