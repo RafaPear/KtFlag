@@ -3,18 +3,13 @@ package pt.rafap.ktflag
 import pt.rafap.ktflag.cmd.CommandImpl
 import pt.rafap.ktflag.cmd.CommandRegister
 import pt.rafap.ktflag.cmd.CommandResult
-import pt.rafap.ktflag.style.Colors
-import pt.rafap.ktflag.style.Colors.colorText
-import kotlin.collections.drop
-import kotlin.text.split
 
 /**
  * A simple command line parser that reads user input, parses it into commands
  * and arguments, and executes the corresponding registered command.
  *
  * @param T The type of the context object passed to command executions.
- * @property prompt The prompt string displayed to the user.
- * @property helpCmd An optional help command to be registered by default.
+ * @property config The parser config.
  */
 class CommandParser<T>(
     vararg cmd: CommandImpl<T>,

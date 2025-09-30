@@ -55,7 +55,7 @@ open class CommandResult<T>(
     class ERROR<T>(message: String) :
         CommandResult<T>("An error occurred", message, true)
 
-    /** Error for invalid argument count: expected [info.minArgs]..[info.maxArgs], got [got]. */
+    /** Error for invalid argument count. */
     class INVALID_ARGS<T>(
         info: CommandInfo,
         got: Int
