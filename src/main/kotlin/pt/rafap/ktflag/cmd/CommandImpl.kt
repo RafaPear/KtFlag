@@ -22,6 +22,7 @@ abstract class CommandImpl<T> {
     fun CommandImpl<*>.verifyArgsCount(got: Int): Boolean {
         val min = this.info.minArgs
         val max = this.info.maxArgs
+        if (max < 0) return got >= min
         return got in min..max
     }
 
