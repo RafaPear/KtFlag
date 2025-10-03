@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>helpCmd</title>
+    <title>executeWrapper</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
@@ -104,12 +104,12 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="KtFlag::pt.rafap.ktflag/ParserConfig/helpCmd/#/PointingToDeclaration//-251573632">
-  <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag</a><span class="delimiter">/</span><a href="index.html">ParserConfig</a><span class="delimiter">/</span><span class="current">helpCmd</span></div>
+<div class="main-content" data-page-type="member" id="content" pageIds="KtFlag::pt.rafap.ktflag.cmd/CommandImpl/executeWrapper/#kotlin.Array[kotlin.String]#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag.cmd</a><span class="delimiter">/</span><a href="index.html">CommandImpl</a><span class="delimiter">/</span><span class="current">executeWrapper</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>help</span><wbr></wbr><span><span>Cmd</span></span></h1>
+    <h1 class="cover"><span>execute</span><wbr></wbr><span><span>Wrapper</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="help-cmd.html">helpCmd</a><span class="token operator">: </span><a href="../../pt.rafap.ktflag.cmd/-command-impl/index.html">CommandImpl</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="execute-wrapper.html"><span class="token function">executeWrapper</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>arg<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">context<span class="token operator">: </span><a href="index.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-command-result/index.html">CommandResult</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span></div><p class="paragraph">DO NOT OVERRIDE THIS METHOD. Wrapper around <a href="execute.html">execute</a> that first verifies the argument count.</p><p class="paragraph">If the count is invalid, returns <a href="../-command-result/-i-n-v-a-l-i-d_-a-r-g-s/index.html">CommandResult.INVALID_ARGS</a> without invoking <a href="execute.html">execute</a>.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <a href="../-command-result/index.html">CommandResult</a> representing the outcome of the execution,     or <a href="../-command-result/-i-n-v-a-l-i-d_-a-r-g-s/index.html">CommandResult.INVALID_ARGS</a> if the argument count is wrong.</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>arg</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Positional arguments supplied to the command.</p></div></div></div></div><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Optional execution context shared across commands.</p></div></div></div></div></div></div></div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>

@@ -2,9 +2,10 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:pt.rafap.ktflag.cmd////PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/index.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandImpl/CommandImpl/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/-command-impl.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/execute/#kotlin.Array[kotlin.String]#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/execute.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandImpl/executeWrapper/#kotlin.Array[kotlin.String]#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/execute-wrapper.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/info/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/info.html
-$dokka.location:pt.rafap.ktflag.cmd/CommandImpl/joinToString/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/join-to-string.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/verifyArgsCount/pt.rafap.ktflag.cmd.CommandImpl[*]#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/verify-args-count.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandInfo/CommandInfo/#kotlin.String#kotlin.String#kotlin.String#kotlin.collections.List[kotlin.String]#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-info/-command-info.html
