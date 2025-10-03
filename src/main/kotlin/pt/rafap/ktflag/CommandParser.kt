@@ -49,9 +49,8 @@ class CommandParser<T>(
         val cmdName = parts[0]
         val args = parts.drop(1).toTypedArray()
 
-        val cmd = commandRegister[cmdName] ?:
-        return CommandResult.INVALID_INPUT("Command '$cmdName' was not found")
+        val cmd = commandRegister[cmdName] ?: return CommandResult.INVALID_INPUT("Command '$cmdName' was not found")
 
-        return cmd.execute(*args, context = context)
+        return cmd.executeWrapper(*args, context = context)
     }
 }

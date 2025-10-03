@@ -8,12 +8,12 @@ package pt.rafap.ktflag.cmd
  *
  * @param T The type of the optional execution context passed to [execute].
  */
-interface CommandImpl<T> {
+abstract class CommandImpl<T> {
     /**
      * Descriptive and usage information for this command, including aliases and
      * argument cardinality constraints.
      */
-    val info: CommandInfo
+    abstract val info: CommandInfo
 
     /**
      * Checks whether the provided argument count [got] is within the inclusive
@@ -32,9 +32,22 @@ interface CommandImpl<T> {
      * @param context Optional execution context shared across commands.
      * @return A [CommandResult] representing the outcome of the execution.
      */
-    fun execute(vararg arg: String, context: T?): CommandResult<T>
+    abstract fun execute(vararg arg: String, context: T?): CommandResult<T>
 
-    fun joinToString(): String{
-        return this.info.toString()
+    /**
+     * DO NOT OVERRIDE THIS METHOD.
+     * Wrapper around [execute] that first verifies the argument count.
+     *
+     * If the count is invalid, returns [CommandResult.INVALID_ARGS] without
+     * invoking [execute].
+     *
+     * @param arg Positional arguments supplied to the command.
+     * @param context Optional execution context shared across commands.
+     * @return A [CommandResult] representing the outcome of the execution,
+     *         or [CommandResult.INVALID_ARGS] if the argument count is wrong.
+     */
+    fun executeWrapper(vararg arg: String, context: T?): CommandResult<T> {
+        if(!verifyArgsCount(arg.size)) return CommandResult.INVALID_ARGS(info, arg.size)
+        return execute(*arg, context = context)
     }
 }

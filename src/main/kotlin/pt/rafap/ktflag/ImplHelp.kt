@@ -13,7 +13,7 @@ import pt.rafap.ktflag.style.Colors
  * Lists all available commands in the provided [register] or prints detailed
  * help for a specific command when a name is supplied.
  */
-internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T> {
+internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() {
     /** Metadata describing the help command. */
     override val info =
         CommandInfo(
