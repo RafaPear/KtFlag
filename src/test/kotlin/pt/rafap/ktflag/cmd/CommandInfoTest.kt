@@ -4,6 +4,9 @@ import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class CommandInfoTest {
+    /**
+     * Verifies that CommandInfo.toString() includes the description, aliases, and usage in its output.
+     */
     @Test
     fun toString_containsDescriptionAliasesAndUsage() {
         val info = CommandInfo(

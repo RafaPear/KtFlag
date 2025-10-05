@@ -7,8 +7,13 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
+/**
+ * Tests for the help command implementation.
+ */
 class ImplHelpTest {
-
+    /**
+     * Creates a dummy command for use in help command tests.
+     */
     private fun dummy(): DummyCommand<Unit> {
         val info = CommandInfo(
             title = "Dummy",
@@ -22,6 +27,9 @@ class ImplHelpTest {
         return DummyCommand(info)
     }
 
+    /**
+     * Verifies that the help command without arguments prints a listing for all commands.
+     */
     @Test
     fun help_withoutArgs_printsListingForAllCommands() {
         val reg = CommandRegister(dummy())
@@ -35,6 +43,9 @@ class ImplHelpTest {
         assertTrue(s.contains("dummy [x] - d, dummy - Does dummy things"))
     }
 
+    /**
+     * Checks that the help command with a known command prints detailed help information.
+     */
     @Test
     fun help_withKnownCommand_printsDetailedHelp() {
         val reg = CommandRegister(dummy())
@@ -47,17 +58,23 @@ class ImplHelpTest {
         assertTrue(s.contains("Description: Long dummy description"))
     }
 
+    /**
+     * Tests that the help command returns an error when given too many arguments.
+     */
     @Test
     fun help_withTooManyArgs_returnsInvalidArgsError() {
         val reg = CommandRegister<Unit>()
         val help = reg["help"]!!
 
         val result = help.execute("one", "two", context = null)
-        assertTrue(result.isError)
+        assertEquals(result.type, CommandResultType.INVALID_ARGS)
         assertEquals("Invalid arguments", result.cause)
         assertTrue(result.message.contains("between 0 and 1, got 2"))
     }
 
+    /**
+     * Verifies that the help command returns an error for an unknown command.
+     */
     @Test
     fun help_withUnknownCommand_returnsError() {
         val reg = CommandRegister<Unit>()
@@ -65,7 +82,7 @@ class ImplHelpTest {
 
         val out = captureStdout {
             val r = help.execute("nope", context = null)
-            assertTrue(r.isError)
+            assertEquals(r.type, CommandResultType.ERROR)
             assertTrue(r.message.contains("Command 'nope' not found"))
         }
         val s = stripAnsi(out)

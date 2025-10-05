@@ -3,7 +3,10 @@ package pt.rafap.ktflag
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
-/** Utility to capture stdout produced inside [block] and return it as a String (without ANSI). */
+/**
+ * Captures the standard output produced inside the given [block] and returns it as a String without ANSI escape codes.
+ * Useful for testing output in assertions.
+ */
 fun captureStdout(block: () -> Unit): String {
     val original = System.out
     val baos = ByteArrayOutputStream()
@@ -20,5 +23,8 @@ fun captureStdout(block: () -> Unit): String {
     return stripAnsi(raw)
 }
 
-/** Removes ANSI color/style escape sequences from [s] for robust assertions. */
+/**
+ * Removes ANSI color/style escape sequences from the input string [s].
+ * This helps make output assertions robust against terminal formatting.
+ */
 fun stripAnsi(s: String): String = s.replace("\u001B\\[[;\\d]*m".toRegex(), "")

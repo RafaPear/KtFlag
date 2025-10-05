@@ -7,7 +7,9 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertSame
 
 class CommandRegisterTest {
-
+    /**
+     * Checks that the built-in help command is auto-registered with common aliases.
+     */
     @Test
     fun autoRegistersHelpWithCommonAliases() {
         val reg = CommandRegister<Unit>()
@@ -18,6 +20,9 @@ class CommandRegisterTest {
         assertSame(help, reg["?"])
     }
 
+    /**
+     * Verifies that registering commands binds all aliases and deduplicates them in getAllCommands().
+     */
     @Test
     fun registerCommands_bindsAllAliasesAndDedupsInGetAllCommands() {
         val dummyInfo = CommandInfo(
@@ -39,6 +44,9 @@ class CommandRegisterTest {
         assertEquals(2, all.size)
     }
 
+    /**
+     * Ensures that a custom help command in the constructor replaces the default only for the given aliases.
+     */
     @Test
     fun customHelpInConstructor_replacesDefaultHelpOnlyForGivenAliases() {
         val customHelpInfo = CommandInfo(
