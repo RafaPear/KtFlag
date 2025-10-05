@@ -5,38 +5,67 @@ import pt.rafap.ktflag.style.Colors
 /**
  * Represents the outcome of executing a command.
  *
- * A result contains a [cause] label, a human-friendly [message], a boolean flag
- * [isError] indicating failure/success semantics, and an optional typed [result]
- * payload provided by successful executions.
+ * A result contains a short [cause] label, a human-friendly [message], a
+ * [type] categorising the outcome (success / error variants), and an optional
+ * typed payload [result] supplied by successful executions.
  *
  * @param T Type of the optional payload returned by the command.
  * @property cause Short label describing the category of the result (e.g., "Success", "Error").
  * @property message Detailed message about the outcome.
- * @property isError Whether the result represents an error condition.
+ * @property type Kind of result; influences formatting and semantics.
  * @property result Optional payload returned by the command execution.
  */
 open class CommandResult<T>(
     val cause: String,
     val message: String,
-    val isError: Boolean,
+    val type: CommandResultType,
     val result: T? = null
 ) {
 
     /**
-     * Convenience constructor where [cause] doubles as the [message] and the
-     * [isError] flag controls the labeled [cause] ("Error" or "Info").
+     * Convenience constructor where [cause] doubles as the [message].
      */
-    constructor(cause: String, isError: Boolean = false, result: T? = null) :
+    constructor(cause: String, type: CommandResultType, result: T? = null) :
             this(
-                cause = if (isError) "Error" else "Info",
+                cause = cause,
                 message = cause,
-                isError = isError,
+                type = type,
                 result = result
             )
 
-    /** Prints a standardized colored error line when [isError] is true. */
+    /**
+     * Prints a single colored line representing this result when it is
+     * considered an error (any non-success [type]). Successes are also
+     * printed with the same format for consistency.
+     */
     fun printError() {
-        println(Colors.colorText("[ERROR] $cause: $message", Colors.ERROR_COLOR))
+        println(Colors.colorText("${type.prefix}: $cause: $message", Colors.ERROR_COLOR))
+    }
+
+    /**
+     * Appends [newMessage] to the existing message, separated by a newline.
+     * Returns a new [CommandResult] instance with the updated message.
+     */
+    fun CommandResult<T>.appendMessage(newMessage: String): CommandResult<T> {
+        return CommandResult(
+            cause = this.cause,
+            message = this.message + "\n" + newMessage,
+            type = this.type,
+            result = this.result
+        )
+    }
+
+    /**
+     * Creates a copy of the current [CommandResult] with optional overrides
+     * for [cause], [message], [type], and [result].
+     */
+    fun CommandResult<T>.copy(
+        cause: String = this.cause,
+        message: String = this.message,
+        type: CommandResultType = this.type,
+        result: T? = this.result
+    ): CommandResult<T> {
+        return CommandResult(cause, message, type, result)
     }
 
     /**
@@ -53,7 +82,7 @@ open class CommandResult<T>(
 
     /** Generic error result with the provided [message]. */
     class ERROR<T>(message: String) :
-        CommandResult<T>("An error occurred", message, true)
+        CommandResult<T>("An error occurred", message, CommandResultType.ERROR)
 
     /** Error for invalid argument count. */
     class INVALID_ARGS<T>(
@@ -62,14 +91,14 @@ open class CommandResult<T>(
     ) : CommandResult<T>(
         "Invalid arguments",
         "Argument count must be between ${info.minArgs} and ${info.maxArgs}, got $got",
-        true
+        CommandResultType.INVALID_ARGS
     )
 
     /** Not implemented marker error with a human-friendly [message]. */
     class NOT_IMPLEMENTED<T>(message: String) :
-        CommandResult<T>("Not implemented", message, true)
+        CommandResult<T>("Not implemented", message, CommandResultType.NOT_IMPLEMENTED)
 
-    // Command does not exist
-    class INVALID_INPUT<T>(message: String) :
-        CommandResult<T>("Invalid input", message, true)
+    /** Result indicating the user referenced a command name that does not exist. */
+    class UNKNOWN_COMMAND<T>(message: String) :
+        CommandResult<T>("Invalid input", message, CommandResultType.UNKNOWN_COMMAND)
 }

@@ -5,6 +5,7 @@ import pt.rafap.ktflag.cmd.CommandInfo
 import pt.rafap.ktflag.cmd.CommandRegister
 import pt.rafap.ktflag.cmd.CommandResult
 import pt.rafap.ktflag.cmd.CommandResult.INVALID_ARGS
+import pt.rafap.ktflag.cmd.CommandResultType
 import pt.rafap.ktflag.style.Colors
 
 /**
@@ -62,12 +63,12 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
             print(" - ")
             println(Colors.colorText(info.description, Colors.HELP_DESC_COLOR))
         }
-        return CommandResult("Printed all commands", false)
+        return CommandResult("Printed all commands", CommandResultType.SUCCESS)
     }
 
     /** Prints detailed help for the command with [name], or an error if not found. */
     private fun printCommand(name: String): CommandResult<T> {
-        val command = register[name] ?: return CommandResult("Command '$name' not found", true)
+        val command = register[name] ?: return CommandResult("Command '$name' not found", CommandResultType.ERROR)
 
         val cmdInfo = command.info
 
@@ -80,6 +81,6 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
         print(Colors.colorText("Description: ", Colors.BOLD, Colors.HELP_DESC_COLOR))
         println(Colors.colorText(cmdInfo.longDescription, Colors.HELP_DESC_COLOR))
 
-        return CommandResult("Printed help for command '$name'", false)
+        return CommandResult("Printed help for command '$name'", CommandResultType.SUCCESS)
     }
 }
