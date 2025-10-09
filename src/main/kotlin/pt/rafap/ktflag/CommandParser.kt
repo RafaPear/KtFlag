@@ -13,6 +13,7 @@ import pt.rafap.ktflag.style.Colors.colorText
  * @param T The type of the context object passed to command executions.
  * @property config The parser config.
  */
+@Suppress("unused")
 class CommandParser<T>(
     vararg cmd: CommandImpl<T>,
     val config: ParserConfig<T> = ParserConfig(),
@@ -60,7 +61,7 @@ class CommandParser<T>(
         val cmdName = parts[0]
         val args = parts.drop(1).toTypedArray()
 
-        val cmd = commandRegister[cmdName] ?: return CommandResult.UNKNOWN_COMMAND("Command '$cmdName' was not found")
+        val cmd = commandRegister[cmdName] ?: return CommandResult.UNKNOWN_COMMAND(cmdName)
 
         return cmd.executeWrapper(*args, context = context)
     }

@@ -1,11 +1,6 @@
 package pt.rafap.ktflag
 
-import pt.rafap.ktflag.cmd.CommandImpl
-import pt.rafap.ktflag.cmd.CommandInfo
-import pt.rafap.ktflag.cmd.CommandRegister
-import pt.rafap.ktflag.cmd.CommandResult
-import pt.rafap.ktflag.cmd.CommandResult.INVALID_ARGS
-import pt.rafap.ktflag.cmd.CommandResultType
+import pt.rafap.ktflag.cmd.*
 import pt.rafap.ktflag.style.Colors
 
 /**
@@ -33,7 +28,7 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
      */
     override fun execute(vararg arg: String, context: T?): CommandResult<T> {
         if (!this.verifyArgsCount(arg.size))
-            return INVALID_ARGS(info, arg.size)
+            return CommandResult.INVALID_ARGS(info, arg.size)
 
         printPreamble()
         return when {

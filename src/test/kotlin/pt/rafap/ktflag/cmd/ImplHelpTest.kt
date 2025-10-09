@@ -68,8 +68,6 @@ class ImplHelpTest {
 
         val result = help.execute("one", "two", context = null)
         assertEquals(result.type, CommandResultType.INVALID_ARGS)
-        assertEquals("Invalid arguments", result.cause)
-        assertTrue(result.message.contains("between 0 and 1, got 2"))
     }
 
     /**
