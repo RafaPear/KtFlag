@@ -26,14 +26,14 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
      * - With no args, prints a compact list of all commands.
      * - With one arg, prints detailed help for that command name.
      */
-    override fun execute(vararg arg: String, context: T?): CommandResult<T> {
-        if (!this.verifyArgsCount(arg.size))
-            return CommandResult.INVALID_ARGS(info, arg.size)
+    override fun execute(vararg args: String, context: T?): CommandResult<T> {
+        if (!this.verifyArgsCount(args.size))
+            return CommandResult.INVALID_ARGS(info, args.size)
 
         printPreamble()
         return when {
-            arg.size <= info.minArgs -> printAll()
-            else                     -> printCommand(arg[0])
+            args.size <= info.minArgs -> printAll()
+            else                      -> printCommand(args[0])
         }
     }
 

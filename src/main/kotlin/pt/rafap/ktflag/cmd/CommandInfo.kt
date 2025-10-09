@@ -27,6 +27,16 @@ data class CommandInfo(
     val minArgs: Int,
     val maxArgs: Int
 ) {
+    init {
+        require(title.isNotEmpty()) { "Command title cannot be empty" }
+        require(description.isNotEmpty()) { "Command description cannot be empty" }
+        require(usage.isNotEmpty()) { "Command usage cannot be empty" }
+        require(minArgs >= 0) { "Command minArgs cannot be negative" }
+        require(maxArgs >= -1) { "Command maxArgs cannot be less than -1" }
+        require(maxArgs == -1 || maxArgs >= minArgs) { "Command maxArgs must be -1 (unbounded) or >= minArgs" }
+        require(aliases.isNotEmpty() && aliases.all { it.isNotEmpty() }) { "Command must have at least one non-empty alias" }
+    }
+
     /**
      * Renders a compact human-readable representation of this command for listings.
      */

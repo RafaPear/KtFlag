@@ -63,7 +63,12 @@ class CommandParser<T>(
 
         val cmd = commandRegister[cmdName] ?: return CommandResult.UNKNOWN_COMMAND(cmdName)
 
-        return cmd.executeWrapper(*args, context = context)
+
+        return try {
+            cmd.executeWrapper(*args, context = context)
+        } catch (ex: Exception) {
+            CommandResult.ERROR("Error retrieving command '$cmdName': ${ex.message}")
+        }
     }
 
     /**
@@ -89,13 +94,20 @@ class CommandParser<T>(
      */
     fun printUnknownCommandError(cmd: String, result: CommandResult<*>) {
         result.printError()
-        val similar = findTheMostSimilarCommand(cmd)
-        val helpCmdAlias = getCommand("help")?.info?.aliases?.first()?.lowercase()
-        if (similar != null)
-            println(colorText("[TIP]: Did you mean '${similar.info.aliases.first()}'?", Colors.YELLOW))
+        val similarAlias = findTheMostSimilarCommand(cmd)?.getLargestAlias()
+        val helpCmdAlias = getCommand("help")?.getLargestAlias()?.lowercase()
+        if (similarAlias != null)
+            println(colorText("[TIP]: Did you mean '$similarAlias'?", Colors.YELLOW))
         if (helpCmdAlias != null)
             println(colorText("[TIP]: Use '$helpCmdAlias' for more information.", Colors.YELLOW))
     }
+
+    /**
+     * Returns the longest alias token for this command. Useful for tips/suggestions
+     * where a more descriptive alias improves readability.
+     */
+    fun CommandImpl<*>.getLargestAlias(): String =
+        info.aliases.reduce { a, b -> if (a.length > b.length) a else b }
 
     /**
      * Finds commands whose alias contains the provided [name] fragment (case-insensitive).

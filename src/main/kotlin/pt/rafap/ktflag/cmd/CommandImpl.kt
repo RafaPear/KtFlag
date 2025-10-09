@@ -29,11 +29,11 @@ abstract class CommandImpl<T> {
     /**
      * Executes the command with the provided arguments.
      *
-     * @param arg Positional arguments supplied to the command.
+     * @param args Positional arguments supplied to the command.
      * @param context Optional execution context shared across commands.
      * @return A [CommandResult] representing the outcome of the execution.
      */
-    abstract fun execute(vararg arg: String, context: T?): CommandResult<T>
+    abstract fun execute(vararg args: String, context: T?): CommandResult<T>
 
     /**
      * DO NOT OVERRIDE THIS METHOD.

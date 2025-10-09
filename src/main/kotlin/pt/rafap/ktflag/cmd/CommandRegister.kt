@@ -58,8 +58,8 @@ class CommandRegister<T>(vararg cmd: CommandImpl<T>, helpCmd: CommandImpl<T>? = 
      */
     fun getTheMostSimilarCommand(alias: String): CommandImpl<T>? {
         val lowerAlias = alias.lowercase()
-        return commands.filterKeys { it.lowercase() == lowerAlias }.values.firstOrNull()
-               ?: commands.filterKeys { it.lowercase().startsWith(lowerAlias) }.values.firstOrNull()
-               ?: commands.filterKeys { it.lowercase().contains(lowerAlias) }.values.firstOrNull()
+        return commands.entries.firstOrNull { it.key.equals(lowerAlias, true) }?.value
+               ?: commands.entries.firstOrNull { it.key.lowercase().startsWith(lowerAlias) }?.value
+               ?: commands.entries.firstOrNull { it.key.lowercase().contains(lowerAlias) }?.value
     }
 }

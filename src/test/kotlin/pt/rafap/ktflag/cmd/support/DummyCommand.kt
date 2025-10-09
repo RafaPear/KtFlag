@@ -9,5 +9,5 @@ class DummyCommand<T>(
     override val info: CommandInfo,
     private val exec: (Array<out String>, T?) -> CommandResult<T> = { _, _ -> CommandResult("Executed", CommandResultType.SUCCESS) }
 ) : CommandImpl<T>() {
-    override fun execute(vararg arg: String, context: T?): CommandResult<T> = exec(arg, context)
+    override fun execute(vararg args: String, context: T?): CommandResult<T> = exec(args, context)
 }
