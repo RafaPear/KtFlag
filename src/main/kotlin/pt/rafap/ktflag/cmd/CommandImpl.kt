@@ -48,7 +48,7 @@ abstract class CommandImpl<T> {
      *         or [CommandResult.INVALID_ARGS] if the argument count is wrong.
      */
     fun executeWrapper(vararg arg: String, context: T?): CommandResult<T> {
-        if(!verifyArgsCount(arg.size)) return CommandResult.INVALID_ARGS(info, arg.size)
+        if (!verifyArgsCount(arg.size)) return CommandResult.INVALID_ARGS(info, arg.size)
         return execute(*arg, context = context)
     }
 }
