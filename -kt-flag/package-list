@@ -1,5 +1,16 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
+$dokka.location:pt.rafap.ktflag.cmd.args////PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/index.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/index.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/CommandArg/#kotlin.String#kotlin.Array[kotlin.String]#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/-command-arg.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/aliases/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/aliases.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/isRequired/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/is-required.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/matches/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/matches.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/name/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/name.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/returnsValue/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/returns-value.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArgsParser///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-args-parser/index.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArgsParser/CommandArgsParser/#kotlin.Array[pt.rafap.ktflag.cmd.args.CommandArg]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-args-parser/-command-args-parser.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArgsParser/parseArgs/#kotlin.Array[kotlin.String]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-args-parser/parse-args.html
 $dokka.location:pt.rafap.ktflag.cmd////PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandImpl/CommandImpl/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-impl/-command-impl.html
@@ -80,6 +91,7 @@ $dokka.location:pt.rafap.ktflag/CommandParser/findSimilarCommands/#kotlin.String
 $dokka.location:pt.rafap.ktflag/CommandParser/findTheMostSimilarCommand/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/find-the-most-similar-command.html
 $dokka.location:pt.rafap.ktflag/CommandParser/getAllCommands/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-all-commands.html
 $dokka.location:pt.rafap.ktflag/CommandParser/getCommand/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-command.html
+$dokka.location:pt.rafap.ktflag/CommandParser/getLargestAlias/pt.rafap.ktflag.cmd.CommandImpl[*]#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/get-largest-alias.html
 $dokka.location:pt.rafap.ktflag/CommandParser/parseInputToResult/#kotlin.String?#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/parse-input-to-result.html
 $dokka.location:pt.rafap.ktflag/CommandParser/printUnknownCommandError/#kotlin.String#pt.rafap.ktflag.cmd.CommandResult[*]/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/print-unknown-command-error.html
 $dokka.location:pt.rafap.ktflag/CommandParser/readInput/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-command-parser/read-input.html
@@ -90,4 +102,5 @@ $dokka.location:pt.rafap.ktflag/ParserConfig/helpCmd/#/PointingToDeclaration/-k
 $dokka.location:pt.rafap.ktflag/ParserConfig/prompt/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag/-parser-config/prompt.html
 pt.rafap.ktflag
 pt.rafap.ktflag.cmd
+pt.rafap.ktflag.cmd.args
 pt.rafap.ktflag.style
