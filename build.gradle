@@ -1,9 +1,7 @@
-import org.jetbrains.dokka.gradle.DokkaTask
-
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.1.20'
     id 'java-library'
-    id 'org.jetbrains.dokka' version '2.0.0'
+    id 'org.jetbrains.dokka' version '2.1.0'
 }
 
 group = 'pt.rafap.ktflag'
@@ -59,53 +57,40 @@ tasks.register('generateVersionProperties') {
 
 processResources.dependsOn tasks.named('generateVersionProperties')
 
-tasks.withType(DokkaTask.class).configureEach {
-    moduleName.set(project.name)
-    moduleVersion.set(project.version.toString())
-    failOnWarning.set(false)
-    suppressObviousFunctions.set(true)
-    suppressInheritedMembers.set(false)
-    offlineMode.set(false)
-}
-
-// adiciona javadoc gerado pela Dokka ao artefacto javadocJar
-project.afterEvaluate {
-    def dokkaTaskCandidate = tasks.named('dokkaJavadoc')
-    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.named('dokkaGenerate')
-    if (dokkaTaskCandidate == null) dokkaTaskCandidate = tasks.find { it.name?.startsWith('dokka') }
-
-    def dokkaGenerateTask = tasks.named('dokkaGenerate')
-    if (dokkaGenerateTask != null) {
-        tasks.named('javadocJar') {
-            dependsOn dokkaGenerateTask
-            from(layout.buildDirectory.dir('dokka/html'))
-        }
-        tasks.named('jar') {
-            dependsOn dokkaGenerateTask
-            from(layout.buildDirectory.dir('dokka/html')) {
-                into('docs')
-            }
+tasks.configureEach { task ->
+    if (task.name.startsWith("dokka")) {
+        task.configure {
+            // Propriedades principais (nem todas as tasks suportam todas)
+            if (hasProperty("moduleName")) moduleName = project.name
+            if (hasProperty("moduleVersion")) moduleVersion = project.version.toString()
+            if (hasProperty("failOnWarning")) failOnWarning = false
+            if (hasProperty("suppressObviousFunctions")) suppressObviousFunctions = true
+            if (hasProperty("suppressInheritedMembers")) suppressInheritedMembers = false
+            if (hasProperty("offlineMode")) offlineMode = false
         }
     }
+}
 
-    if (dokkaTaskCandidate != null) {
-        tasks.named('javadocJar') {
-            dependsOn dokkaTaskCandidate
-            if (dokkaTaskCandidate.hasProperty('outputDirectory')) {
-                from(dokkaTaskCandidate.outputDirectory)
-            }
+// Após avaliar o projeto, liga as tasks da Dokka aos artefactos
+project.afterEvaluate {
+    def dokkaTask = tasks.named("dokkaGeneratePublicationHtml")
+            ?: tasks.named("dokkaHtml")
+            ?: tasks.named("dokkaGenerate")
+
+    if (dokkaTask != null) {
+        tasks.named("javadocJar") {
+            dependsOn(dokkaTask)
+            from(layout.buildDirectory.dir("dokka/html"))
         }
 
-        tasks.named('jar') {
-            dependsOn dokkaTaskCandidate
-            if (dokkaTaskCandidate.hasProperty('outputDirectory')) {
-                from(dokkaTaskCandidate.outputDirectory) {
-                    into('docs')
-                }
+        tasks.named("jar") {
+            dependsOn(dokkaTask)
+            from(layout.buildDirectory.dir("dokka/html")) {
+                into("docs")
             }
         }
     } else {
-        logger.warn('Nenhuma task Dokka encontrada; javadocJar/jar não irão incluir documentação Dokka.')
+        logger.warn("⚠️ Nenhuma task Dokka encontrada; javadocJar/jar não irão incluir documentação Dokka.")
     }
 }
 
@@ -127,6 +112,14 @@ tasks.register("runExample", JavaExec) {
 }
 
 // força saída de todas as DokkaTasks para build/dokka/html
-tasks.withType(DokkaTask).configureEach {
-    outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+tasks.configureEach { task ->
+    if (task.name.startsWith("dokka")) {
+        task.configure {
+            if (hasProperty("outputDirectory")) {
+                outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+            } else if (hasProperty("outputDir")) {
+                outputDir.set(layout.buildDirectory.dir("dokka/html"))
+            }
+        }
+    }
 }
