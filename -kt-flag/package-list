@@ -2,8 +2,9 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:pt.rafap.ktflag.cmd.args////PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/index.html
 $dokka.location:pt.rafap.ktflag.cmd.args/CommandArg///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/index.html
-$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/CommandArg/#kotlin.String#kotlin.Array[kotlin.String]#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/-command-arg.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/CommandArg/#kotlin.String#kotlin.Array[kotlin.String]#kotlin.String#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/-command-arg.html
 $dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/aliases/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/aliases.html
+$dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/description/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/description.html
 $dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/isRequired/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/is-required.html
 $dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/matches/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/matches.html
 $dokka.location:pt.rafap.ktflag.cmd.args/CommandArg/name/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd.args/-command-arg/name.html
@@ -60,6 +61,7 @@ $dokka.location:pt.rafap.ktflag.cmd/CommandResultType.SUCCESS///PointingToDeclar
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType.UNKNOWN_COMMAND///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/-u-n-k-n-o-w-n_-c-o-m-m-a-n-d/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType///PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/index.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType/entries/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/entries.html
+$dokka.location:pt.rafap.ktflag.cmd/CommandResultType/invoke/#kotlin.String#TypeParam(bounds=[kotlin.Any?])?/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/invoke.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType/prefix/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/prefix.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType/valueOf/#kotlin.String/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/value-of.html
 $dokka.location:pt.rafap.ktflag.cmd/CommandResultType/values/#/PointingToDeclaration/-kt-flag/pt.rafap.ktflag.cmd/-command-result-type/values.html

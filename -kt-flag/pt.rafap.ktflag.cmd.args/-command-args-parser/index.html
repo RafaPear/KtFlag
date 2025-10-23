@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.4.0        </div>
+1.4.1        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
@@ -108,7 +108,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">KtFlag</a><span class="delimiter">/</span><a href="../index.html">pt.rafap.ktflag.cmd.args</a><span class="delimiter">/</span><span class="current">CommandArgsParser</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Command</span><wbr></wbr><span>Args</span><wbr></wbr><span><span>Parser</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CommandArgsParser</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cmdArgs<span class="token operator">: </span><a href="../-command-arg/index.html">CommandArg</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Parses CLI flags/options for a command based on a declared set of <a href="../-command-arg/index.html">CommandArg</a>.</p><p class="paragraph">The parser walks the provided tokens left-to-right, matching them against known argument <a href="../-command-arg/aliases.html">aliases</a>. For an argument marked as <a href="../-command-arg/returns-value.html">CommandArg.returnsValue</a>, the next token is consumed as its value; otherwise an empty string is stored as the value. Required arguments are enforced via <a href="../-command-arg/is-required.html">CommandArg.isRequired</a>.</p><p class="paragraph">Error modes:</p><ul><li><p class="paragraph">Unknown argument token -> IllegalArgumentException</p></li><li><p class="paragraph">Missing value for an argument that returns a value -> IllegalArgumentException</p></li><li><p class="paragraph">One or more required arguments missing -> IllegalArgumentException</p></li></ul></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CommandArgsParser</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">args<span class="token operator">: </span><a href="../-command-arg/index.html">CommandArg</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Parses CLI flags/options for a command based on a declared set of <a href="../-command-arg/index.html">CommandArg</a>.</p><p class="paragraph">The parser walks the provided tokens left-to-right, matching them against known argument <a href="../-command-arg/aliases.html">aliases</a>. For an argument marked as <a href="../-command-arg/returns-value.html">CommandArg.returnsValue</a>, the next token is consumed as its value; otherwise an empty string is stored as the value. Required arguments are enforced via <a href="../-command-arg/is-required.html">CommandArg.isRequired</a>.</p><p class="paragraph">Error modes:</p><ul><li><p class="paragraph">Unknown argument token -> IllegalArgumentException</p></li><li><p class="paragraph">Missing value for an argument that returns a value -> IllegalArgumentException</p></li><li><p class="paragraph">One or more required arguments missing -> IllegalArgumentException</p></li></ul></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -125,7 +125,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>cmdArgs<span class="token operator">: </span><a href="../-command-arg/index.html">CommandArg</a></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>args<span class="token operator">: </span><a href="../-command-arg/index.html">CommandArg</a></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
