@@ -19,4 +19,11 @@ enum class CommandResultType(val prefix: String) {
 
     /** Placeholder for functionality that has not yet been implemented. */
     NOT_IMPLEMENTED("[NOT IMPLEMENTED]");
+
+    operator fun <T> invoke(
+        message: String,
+        result: T? = null
+    ): CommandResult<T>{
+        return CommandResult(message, type = this, result = result)
+    }
 }

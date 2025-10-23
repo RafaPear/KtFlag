@@ -46,7 +46,6 @@ open class CommandResult<T>(
      * Prints a standardized message for an unknown command [name], hinting the
      * user to consult the provided help command [cmdHelp].
      */
-    @Deprecated("This function requires a help cmd as an argument which implies some bad meeh logic")
     fun printUnknownCommand(name: String, cmdHelp: CommandImpl<*>) {
         println(Colors.colorText("Unknown command: $name", Colors.ERROR_COLOR))
         print(Colors.colorText("Use", Colors.INFO_COLOR))

@@ -18,11 +18,12 @@ package pt.rafap.ktflag.cmd.args
 class CommandArg(
     val name: String,
     val aliases: Array<String>,
+    val description: String = "",
     val returnsValue: Boolean,
     val isRequired: Boolean,
 ) {
     init {
-        require(aliases.isNotEmpty())
+        require(aliases.isNotEmpty() && name.isNotEmpty())
     }
 
     /**
@@ -30,5 +31,4 @@ class CommandArg(
      * @return `true` if [arg] matches an alias, `false` otherwise.
      */
     fun matches(arg: String): Boolean = aliases.contains(arg)
-
 }

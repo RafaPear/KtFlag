@@ -14,7 +14,28 @@ package pt.rafap.ktflag.cmd.args
  * - Missing value for an argument that returns a value -> IllegalArgumentException
  * - One or more required arguments missing -> IllegalArgumentException
  */
-class CommandArgsParser(private vararg val cmdArgs: CommandArg) {
+class CommandArgsParser(vararg args: CommandArg) {
+
+    private val helpArg = CommandArg(
+        name = "help",
+        aliases = arrayOf("--help", "-h"),
+        description = "Displays help information for the command.",
+        returnsValue = false,
+        isRequired = false,
+    )
+
+    private val cmdArgs = args.toList() + helpArg
+
+    @Suppress("unused")
+    private fun printHelp(){
+        println("Available arguments:")
+        for (arg in cmdArgs) {
+            val aliases = arg.aliases.joinToString(", ")
+            val valueInfo = if (arg.returnsValue) " <value>" else ""
+            val requiredInfo = if (arg.isRequired) " (required)" else ""
+            println("  $aliases$valueInfo$requiredInfo: ${arg.description}")
+        }
+    }
 
     /**
      * Parses [args] and returns a map from [CommandArg] to its parsed value.
