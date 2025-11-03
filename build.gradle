@@ -2,10 +2,11 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.1.20'
     id 'java-library'
     id 'org.jetbrains.dokka' version '2.1.0'
+    id 'maven-publish'
 }
 
 group = 'pt.rafap.ktflag'
-version = '1.5.1'
+version = '1.5.2'
 
 repositories {
     mavenCentral()
@@ -122,4 +123,9 @@ tasks.configureEach { task ->
             }
         }
     }
+}
+
+// Publicação automática no Maven Local
+tasks.named("build") {
+    finalizedBy(tasks.named("publishToMavenLocal"))
 }
