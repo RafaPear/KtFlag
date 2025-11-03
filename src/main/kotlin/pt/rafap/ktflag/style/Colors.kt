@@ -41,27 +41,6 @@ object Colors {
     /** Underline style. */
     const val UNDERLINE = "\u001B[4m"
 
-    /** Default color used for error messages. */
-    const val ERROR_COLOR = RED
-
-    /** Default color used for warnings. */
-    const val WARNING_COLOR = GREEN
-
-    /** Default color used for informational messages. */
-    const val INFO_COLOR = GREEN
-
-    /** Color used for help usage tokens. */
-    const val HELP_USAGE_COLOR = CYAN
-
-    /** Color used for help alias tokens. */
-    const val HELP_ALIAS_COLOR = BLUE
-
-    /** Color used for help descriptions. */
-    const val HELP_DESC_COLOR = YELLOW
-
-    /** Color used for prompt. */
-    const val PROMPT_COLOR = PURPLE
-
     /**
      * Wraps [text] with one or more ANSI [colors] or styles and appends [RESET].
      *

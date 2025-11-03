@@ -9,7 +9,7 @@ import pt.rafap.ktflag.style.Colors
  * Lists all available commands in the provided [register] or prints detailed
  * help for a specific command when a name is supplied.
  */
-internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() {
+internal class ImplHelp<T>(val register: CommandRegister<T>, val config: ParserConfig<T> = ParserConfig()) : CommandImpl<T>() {
     /** Metadata describing the help command. */
     override val info =
         CommandInfo(
@@ -40,11 +40,11 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
     /** Prints the headings for the help listing. */
     private fun printPreamble() {
         print(Colors.colorText("Format: ", Colors.BOLD))
-        print(Colors.colorText("usage", Colors.HELP_USAGE_COLOR))
+        print(Colors.colorText("usage", config.helpUsageColor))
         print(" - ")
-        print(Colors.colorText("aliases", Colors.HELP_ALIAS_COLOR))
+        print(Colors.colorText("aliases", config.helpAliasColor))
         print(" - ")
-        println(Colors.colorText("description", Colors.HELP_DESC_COLOR))
+        println(Colors.colorText("description", config.helpDescColor))
         println()
     }
 
@@ -52,11 +52,11 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
     private fun printAll(): CommandResult<T> {
         register.getAllCommands().forEach { cmd ->
             val info = cmd.info
-            print(Colors.colorText(info.usage, Colors.HELP_USAGE_COLOR, Colors.BOLD))
+            print(Colors.colorText(info.usage, config.helpUsageColor, Colors.BOLD))
             print(" - ")
-            print(Colors.colorText(info.aliases.joinToString(), Colors.HELP_ALIAS_COLOR))
+            print(Colors.colorText(info.aliases.joinToString(), config.helpAliasColor))
             print(" - ")
-            println(Colors.colorText(info.description, Colors.HELP_DESC_COLOR))
+            println(Colors.colorText(info.description, config.helpDescColor))
         }
         return CommandResult("Printed all commands", CommandResultType.SUCCESS)
     }
@@ -67,14 +67,14 @@ internal class ImplHelp<T>(val register: CommandRegister<T>) : CommandImpl<T>() 
 
         val cmdInfo = command.info
 
-        print(Colors.colorText("Usage: ", Colors.BOLD, Colors.HELP_USAGE_COLOR))
-        println(Colors.colorText(cmdInfo.usage, Colors.HELP_USAGE_COLOR, Colors.BOLD))
+        print(Colors.colorText("Usage: ", Colors.BOLD, config.helpUsageColor))
+        println(Colors.colorText(cmdInfo.usage, config.helpUsageColor, Colors.BOLD))
 
-        print(Colors.colorText("Aliases: ", Colors.BOLD, Colors.HELP_ALIAS_COLOR))
-        println(Colors.colorText(cmdInfo.aliases.joinToString(), Colors.HELP_ALIAS_COLOR))
+        print(Colors.colorText("Aliases: ", Colors.BOLD, config.helpAliasColor))
+        println(Colors.colorText(cmdInfo.aliases.joinToString(), config.helpAliasColor))
 
-        print(Colors.colorText("Description: ", Colors.BOLD, Colors.HELP_DESC_COLOR))
-        println(Colors.colorText(cmdInfo.longDescription, Colors.HELP_DESC_COLOR))
+        print(Colors.colorText("Description: ", Colors.BOLD, config.helpDescColor))
+        println(Colors.colorText(cmdInfo.longDescription, config.helpDescColor))
 
         return CommandResult("Printed help for command '$name'", CommandResultType.SUCCESS)
     }

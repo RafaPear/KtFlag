@@ -42,7 +42,7 @@ class CommandParser<T>(
      * @return The raw user input line (never null, may be empty).
      */
     fun readInput(): String {
-        print(config.prompt)
+        print(colorText(config.prompt, config.promptColor))
         return readln()
     }
 
@@ -93,7 +93,7 @@ class CommandParser<T>(
      * @param result The result object describing the unknown command error.
      */
     fun printUnknownCommandError(cmd: String, result: CommandResult<*>) {
-        result.printError()
+        result.printError(config)
         val similarAlias = findTheMostSimilarCommand(cmd)?.getLargestAlias()
         val helpCmdAlias = getCommand("help")?.getLargestAlias()?.lowercase()
         if (similarAlias != null)
