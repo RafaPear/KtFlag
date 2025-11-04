@@ -15,7 +15,6 @@ import pt.rafap.ktflag.style.Colors
  * @property type Kind of result; influences formatting and semantics.
  * @property result Optional payload returned by the command execution.
  */
-@Suppress("unused")
 open class CommandResult<T>(
     val message: String,
     val type: CommandResultType,
@@ -35,7 +34,7 @@ open class CommandResult<T>(
      * Creates a copy of the current [CommandResult] with optional overrides
      * for [message], [type], and [result].
      */
-    fun CommandResult<T>.copy(
+    fun copy(
         message: String = this.message,
         type: CommandResultType = this.type,
         result: T? = this.result
@@ -50,12 +49,12 @@ open class CommandResult<T>(
     fun printUnknownCommand(name: String, cmdHelp: CommandImpl<*>, config: ParserConfig<T>) {
         println(Colors.colorText("Unknown command: $name", config.errorColor))
         print(Colors.colorText("Use", config.infoColor))
-        print(Colors.colorText(" ${cmdHelp.info.aliases} ",config.helpAliasColor))
+        print(Colors.colorText(" ${cmdHelp.info.aliases} ", config.helpAliasColor))
         println(Colors.colorText("to see the list of available commands.", config.infoColor))
     }
 
     class INVALID_ARGS<T>(info: CommandInfo, got: Int) : CommandResult<T>(
-                message = "Argument count must be between ${info.minArgs} and ${info.maxArgs}, got $got.",
+        message = "Argument count must be between ${info.minArgs} and ${info.maxArgs}, got $got.",
         type = CommandResultType.INVALID_ARGS,
         result = null
     )

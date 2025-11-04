@@ -32,8 +32,8 @@ internal class ImplHelp<T>(val register: CommandRegister<T>, val config: ParserC
 
         printPreamble()
         return when {
-            args.size <= info.minArgs -> printAll()
-            else                      -> printCommand(args[0])
+            args.size <= info.minArgs -> printAll().copy(result = context)
+            else                      -> printCommand(args[0]).copy(result = context)
         }
     }
 
